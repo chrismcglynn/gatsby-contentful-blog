@@ -1,0 +1,29 @@
+.latestPosts {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.googleMap {
+  height: 75vh;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px)  {
+  .latestPosts {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .googleMap {
+    height: 50vh;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px)  {
+  .latestPosts {
+    flex-direction: row;
+    width: auto;
+  }
+}
