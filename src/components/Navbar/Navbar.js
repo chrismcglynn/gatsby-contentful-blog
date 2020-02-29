@@ -16,6 +16,7 @@ export default function Navbar() {
     document.body.style.overflow = '';
   } else if (mounted && toggle) {
     document.body.style.overflow = 'hidden';
+  }
 
   function renderHamburger() {
     return (
