@@ -10,10 +10,8 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <LatestPosts header="Latest Posts" postData={data} />
-    <LatestPosts header="Latest Posts" postData={data} />
-    <LatestPosts header="Latest Posts" postData={data} />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      {/* <Image /> */}
+      <Image />
     </div>
   </Layout>
 )

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { navConfig } from './navConfig';
 import styles from './Navbar.module.css';
@@ -6,16 +6,12 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
 
-  const [mounted, setMount] = useState(false);
-
-  useEffect(() => {
-    setMount(true);
-  },[]);
-
-  if (!toggle) {
-    document.body.style.overflow = '';
-  } else if (mounted && toggle) {
-    document.body.style.overflow = 'hidden';
+  if (typeof document !== undefined) {
+    if (!toggle) {
+      document.body.style.overflow = '';
+    } else if (toggle) {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   function renderHamburger() {
