@@ -6,7 +6,7 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
 
-  if (typeof document !== undefined) {
+  if (typeof document !== 'undefined') {
     if (!toggle) {
       document.body.style.overflow = '';
     } else if (toggle) {
