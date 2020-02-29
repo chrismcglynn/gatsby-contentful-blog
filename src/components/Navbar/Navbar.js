@@ -6,6 +6,7 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
 
+  // Checks for document once SSR is done
   if (typeof document !== 'undefined') {
     if (!toggle) {
       document.body.style.overflow = '';
@@ -45,11 +46,7 @@ export default function Navbar() {
   return (
     <div className={styles.nav}>
       {renderHamburger()}
-      <div
-        className={
-          !toggle ? `${styles.navLinks}` : `${styles.navLinks} ${styles.open}`
-        }
-      >
+      <div className={!toggle ? `${styles.navLinks}` : `${styles.navLinks} ${styles.open}`}>
         {renderLinks(navConfig)}
       </div>
     </div>

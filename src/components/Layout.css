@@ -188,10 +188,6 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
-html {
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
 * {
   box-sizing: inherit;
 }
