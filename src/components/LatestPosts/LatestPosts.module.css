@@ -7,6 +7,7 @@
 .latestPosts {
   height: auto;
   width: 100%;
+  margin-bottom: 3em;
 }
 
 .postsContainer {
