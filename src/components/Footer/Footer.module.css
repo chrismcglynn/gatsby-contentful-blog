@@ -1,0 +1,27 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  margin: 0 0 24px 0;
+}
+
+.copyrightContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyright {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: .8em;
+  font-weight: 100;
+}
+
+.footerText {
+  font-size: 1.1em;
+  font-weight: 200;
+  color: aliceblue;
+}

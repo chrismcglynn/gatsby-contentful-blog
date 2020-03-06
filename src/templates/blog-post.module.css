@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
   color: lightblue;
   font-size: 4em;
   font-weight: 200;
-  text-overflow: ;
+  margin-bottom: .5em;
 }
 
 .postAuthor {
@@ -26,6 +26,8 @@ h1, h2, h3, h4, h5, h6 {
 .date {
   color: lightcoral;
   font-size: .7em;
+  display: block;
+  margin-bottom: 1em;
 }
 
 .imageContainer {
