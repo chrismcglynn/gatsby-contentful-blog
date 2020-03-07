@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.headerText {
+  margin-bottom: 2em;
+}
+
 @media only screen and (max-width: 600px)  {
   .latestPosts {
     flex-direction: column;
