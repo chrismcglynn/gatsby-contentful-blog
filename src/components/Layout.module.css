@@ -12,8 +12,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5em;
+  color: #fff;
 }
 
 img {
@@ -35,8 +43,8 @@ a {
 .layout {
   margin: 0 auto;
   max-width: 100%;
-  padding: 0 13.0875rem 5.45rem;
-  min-height: 65vh;
+  max-width: 960px;
+  min-height: 85vh;
 }
 
 
@@ -48,7 +56,7 @@ a {
   .layout {
     margin: 0 auto;
     max-width: 100%;
-    padding: 0 1.0875rem 2.45rem;
+    padding: 0 1em;
     min-height: 65vh;
   }
 }
@@ -73,12 +81,11 @@ td {
 }
 
 @media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1200px)  {
+only screen and (max-width: 760px) {
   .layout {
     margin: 0 auto;
     max-width: 100%;
-    padding: 0 4.0875rem 2.45rem;
+    padding: 0 1em;
     min-height: 65vh;
   }
 
@@ -117,4 +124,22 @@ only screen and (max-width: 760px),
 		padding-right: 10px; 
 		white-space: nowrap;
   }
+}
+
+@media 
+only screen and (min-width: 760px) and (max-width: 1200px) {
+  .layout {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 2em;
+    min-height: 65vh;
+  }
+}
+
+@media 
+only screen and (min-device-width: 1200px) {
+  .layout {
+    max-width: 960px;
+  }
+
 }
