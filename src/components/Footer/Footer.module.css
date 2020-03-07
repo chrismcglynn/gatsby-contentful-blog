@@ -4,7 +4,10 @@ footer {
   align-items: center;
   position: absolute;
   width: 100%;
-  margin: 0 0 24px 0;
+  height: 10vh;
+  margin: 24px 0 0 0;
+  z-index: -1;
+  background-color: #1F222A;
 }
 
 .copyrightContainer {
@@ -21,7 +24,7 @@ footer {
 }
 
 .footerText {
-  font-size: 1.1em;
+  font-size: .8em;
   font-weight: 200;
   color: aliceblue;
 }
