@@ -1,12 +1,13 @@
 import React from "react"
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/Layout"
 import { graphql } from "gatsby"
+import styles from './pages.module.css'
 
 export default function({ data }) {
   return (
     <>
       <Layout>
-        <h1>My Site's Files</h1>
+        <h1 className={styles.headerText}>My Site's Files</h1>
         <table>
           <thead>
             <tr>
