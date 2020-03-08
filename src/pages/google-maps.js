@@ -1,11 +1,10 @@
-import React from "react"
-import Layout from "../components/Layout/Layout"
-import { WrappedMap } from "../components/GoogleMap/GoogleMap"
-import styles from "./pages.module.css"
+import React from "react";
+import { WrappedMap } from "../components/GoogleMap/GoogleMap";
+import styles from "./pages.module.css";
 
 export default function GoogleMaps() {
   return (
-    <Layout>
+    <>
       <h1 className={styles.headerText}>Google Maps Example</h1>
       <div className={styles.googleMap}>
         <WrappedMap
@@ -17,6 +16,6 @@ export default function GoogleMaps() {
           `}
         />
       </div>
-    </Layout>
-  )
+    </>
+  );
 }
