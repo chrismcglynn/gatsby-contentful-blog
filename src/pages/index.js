@@ -1,16 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
 import LatestPosts from "../components/LatestPosts/LatestPosts";
-import Image from "../components/Image";
 import SEO from "../components/SEO";
 
 const IndexPage = ({ data }) => (
   <>
     <SEO title="Home" />
     <LatestPosts header="Latest Posts" postData={data} />
-    <div style={{ maxWidth: `100%`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
   </>
 );
 
