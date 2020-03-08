@@ -9,13 +9,18 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
+  margin-bottom: .5em;
+}
+
+p {
+  margin-bottom: 2em;
+  font-weight: 200;
 }
 
 .postTitle {
   color: lightblue;
   font-size: 4em;
   font-weight: 200;
-  margin-bottom: .5em;
 }
 
 .postAuthor {
@@ -35,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
+  margin-bottom: 3em;
 }
 
 .heroImage {

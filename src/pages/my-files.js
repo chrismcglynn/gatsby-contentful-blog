@@ -1,36 +1,33 @@
-import React from "react"
-import Layout from "../components/Layout/Layout"
-import { graphql } from "gatsby"
-import styles from './pages.module.css'
+import React from "react";
+import { graphql } from "gatsby";
+import styles from "./pages.module.css";
 
 export default function({ data }) {
   return (
     <>
-      <Layout>
-        <h1 className={styles.headerText}>My Site's Files</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>relativePath</th>
-              <th>prettySize</th>
-              <th>extension</th>
-              <th>birthTime</th>
+      <h1 className={styles.headerText}>My Site's Files</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>relativePath</th>
+            <th>prettySize</th>
+            <th>extension</th>
+            <th>birthTime</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.allFile.edges.map(({ node }, index) => (
+            <tr key={index}>
+              <td>{node.relativePath}</td>
+              <td>{node.prettySize}</td>
+              <td>{node.extension}</td>
+              <td>{node.birthTime}</td>
             </tr>
-          </thead>
-          <tbody>
-            {data.allFile.edges.map(({ node }, index) => (
-              <tr key={index}>
-                <td>{node.relativePath}</td>
-                <td>{node.prettySize}</td>
-                <td>{node.extension}</td>
-                <td>{node.birthTime}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Layout>
+          ))}
+        </tbody>
+      </table>
     </>
-  )
+  );
 }
 
 export const query = graphql`
@@ -46,4 +43,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

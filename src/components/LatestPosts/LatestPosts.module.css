@@ -1,7 +1,8 @@
 .header {
-
   font-weight: 300;
   color: #fff;
+  font-size: 1.5em;
+  margin-bottom: 1em
 }
 
 .latestPosts {
@@ -16,6 +17,31 @@
   width: 100%;
 }
 
+@media only screen and (max-width: 1200px)  {
+  .header {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #fff;
+  }
+  
+  .postsContainer {
+    flex-direction: row;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 770px)  {
+  .header {
+    font-weight: 300;
+    color: #fff;
+  }
+
+  .postsContainer {
+    flex-direction: row;
+    width: auto;
+  }
+}
+
 @media only screen and (max-width: 600px)  {
   .header {
 
@@ -25,19 +51,6 @@
 
   .postsContainer {
     flex-direction: column;
-    width: auto;
-  }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 1200px)  {
-  .header {
-    font-size: 1.5em;
-    font-weight: 300;
-    color: #fff;
-  }
-  
-  .postsContainer {
-    flex-direction: row;
     width: auto;
   }
 }
