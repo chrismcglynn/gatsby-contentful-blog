@@ -15,7 +15,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allContentfulBlogPost {
         edges {
           node {
-            slug
+            slug,
+            tags
           }
         }
       }
@@ -27,7 +28,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
-    actions.createPage({
+    createPage({
       path: node.slug,
       component: path.resolve(`./src/templates/blog-post.js`),
       context: {
