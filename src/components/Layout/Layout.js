@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Navbar from "../Navbar/Navbar"
+import Signup from "../Signup/Signup"
 import Footer from "../Footer/Footer"
 import styles from "./Layout.module.css"
 
@@ -29,6 +30,7 @@ const Layout = ({ children }) => {
       <div className={styles.layout}>
         <main>{children}</main>
       </div>
+      <Signup />
       <Footer />
     </>
   )

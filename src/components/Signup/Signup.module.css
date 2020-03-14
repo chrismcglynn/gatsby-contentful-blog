@@ -1,0 +1,192 @@
+span {
+	display: flex;
+	font-family: sans-serif;
+	font-size: 1em;
+	font-weight: 200;
+	margin-right: .8em;
+	color: white;
+	width: 670px;
+	letter-spacing: 1px;
+}
+
+.header {
+  display: flex;
+}
+
+.close {
+  display: none;
+}
+
+.mdiv {
+  height: .7em;
+  width: 1px;
+  margin-right: 6px;
+  background-color: white;
+  transform: rotate(45deg);
+  Z-index: 1;
+}
+
+.md {
+  height: .7em;
+  width: 1px;
+  background-color: white;
+  transform: rotate(90deg);
+  Z-index: 2;
+}
+
+input {
+	color: white;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+	border-radius: 8px;
+	width: 100%;
+	height: 2.5em;
+	outline: none;
+	font-weight: 500;
+	letter-spacing: 2px;
+	transition: all .3s ease-out;
+	margin-right: 10px;
+}
+
+input:focus {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid white;
+
+	transition: all .3s ease-out;
+}
+
+input::placeholder {
+	color: white;
+	font-size: 1.3em;
+	font-weight: 300;
+}
+
+input:hover::placeholder {
+	color: white;
+}
+
+input:focus::placeholder {
+	color: white;
+	transition: all .3s ease-out;
+}
+
+button {
+	padding: .55em 2em;
+	border-radius: 8px;
+	font-size: 1em;
+	font-weight: 400;
+	color: white;
+	outline: none;
+	background-color: transparent;
+	border: 1px solid white;
+}
+
+button:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	cursor: pointer;
+	transition: 255ms;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	position: sticky;
+ 	bottom: 0;
+	animation: rainbow 8s ease infinite;
+	background-image: linear-gradient(124deg, #ff470f, #f14668, #b86bff, #3273dc);
+  background-size: 800% 800%;
+}
+
+.input-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes rainbow {
+	0% {
+		background-position: 1% 80%;
+		background-position-x: 1%;
+		background-position-y: 80%;
+	}
+
+	50% {
+		background-position: 99% 20%;
+	}
+
+	100% {
+		background-position: 1% 80%;
+	}
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    padding: .5em;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  span {
+    display: flex;
+    font-family: sans-serif;
+    font-size: .8em;
+    font-weight: 200;
+    margin-right: .5em;
+    color: white;
+    width: 100%;
+    letter-spacing: 1px;
+  }
+  
+  input {
+    color: white;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 8px;
+    width: 100%;
+    height: 2.5em;
+    outline: none;
+    font-size: .7em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: all .3s ease-out;
+    margin: 6px 6px 0 0;
+  }
+  
+  button {
+    padding: .55em 2em;
+    border-radius: 4px;
+    font-size: .7em;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
