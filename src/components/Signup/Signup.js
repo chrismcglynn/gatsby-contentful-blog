@@ -15,7 +15,7 @@ export default function Signup() {
           </div>
         </div>
         <div className={styles.inputWrapper}>
-          <input placeholder="email:" />
+          <input placeholder="email:" user-scalable={0} />
           <button>Submit</button>
         </div>
       </div>
