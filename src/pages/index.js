@@ -8,7 +8,6 @@ const IndexPage = ({ data }) => (
   <>
     <SEO title="Home" />
     <LatestPosts header="Latest Posts" postData={data} />
-    <BlogTags data={data}/>
   </>
 );
 
