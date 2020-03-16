@@ -1,98 +1,109 @@
 .layout {
+  max-width: 1080px;
   margin: 0 auto;
-  max-width: 100%;
-  max-width: 960px;
-  min-height: 100vh;
+  padding: 0 2rem;
 }
 
-@media only screen and (min-device-width: 1200px) {
-  .layout {
-    max-width: 960px;
-  }
-}
-
-@media only screen and (min-width: 760px) and (max-width: 1200px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
   .layout {
     margin: 0 auto;
-    max-width: 100%;
     padding: 0 2em;
-    height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 760px) {
-  .layout {
-    margin: 0 auto;
-    max-width: 100%;
-    padding: 0 1em;
     min-height: 100vh;
   }
 
   /**********************************
   Purpose: Make table responsive
- **********************************/
+  **********************************/
 
-  table {
-    width: 100%;
-  }
+ table {
+  width: 100%;
+}
 
-  thead {
-    color: lightblue;
-    font-size: 1.1em;
-    text-align: left;
-  }
+thead {
+  color: lightblue;
+  font-size: 1.1em;
+  text-align: left;
+}
 
-  td {
-    word-wrap: break-word;
-    color: #fff;
-  }
+td {
+  word-wrap: break-word;
+  color: #fff;
+}
 
-  /* Force table to not be like tables anymore */
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-  }
+/* Force table to not be like tables anymore */
+table,
+thead,
+tbody,
+th,
+td,
+tr {
+  display: block;
+}
 
-  /* Hide table headers (but not display: none;, for accessibility) */
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
+/* Hide table headers (but not display: none;, for accessibility) */
+thead tr {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
 
-  td {
-    /* Behave  like a "row" */
-    border: none;
-    position: relative;
-    color: lightgreen;
-  }
+td {
+  /* Behave  like a "row" */
+  border: none;
+  position: relative;
+  color: lightgreen;
+}
 
-  td:last-child {
-    border-bottom: 1px solid #eee;
-    margin-bottom: 1em;
-  }
+td:last-child {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1em;
+}
 
-  td:before {
-    /* Now like a table header */
-    position: absolute;
-    /* Top/left values mimic padding */
-    top: 6px;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
+td:before {
+  /* Now like a table header */
+  position: absolute;
+  /* Top/left values mimic padding */
+  top: 6px;
+  left: 6px;
+  width: 45%;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .layout {
+    margin: 0 auto;
+    padding: 0 1em;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (max-width: 480px) {
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  layout {
+    margin: 0 auto;
+    padding: 0 3em;
+    min-height: 100vh;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
   .layout {
     margin: 0 auto;
-    max-width: 100%;
-    padding: 0 2em;
+
     min-height: 100vh;
+    padding: 0 11em;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .layout {
+    margin: 0 auto;
+    padding: 0 2rem;
   }
 }

@@ -8,7 +8,7 @@ export default function ({ tags }) {
     return tags.map((tag, idx) => {
       return (
         <Link
-          to={`/${tag}`}
+          to={`/tags/${tag}`}
           key={`pill-${tag}-${idx}`}
           className={styles.pill}
         >
