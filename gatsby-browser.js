@@ -16,6 +16,7 @@ export function wrapPageElement({ element, props }) {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Chris McGlynn</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Layout {...props}>{element}</Layout>
