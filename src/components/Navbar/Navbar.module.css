@@ -16,14 +16,15 @@
 }
 
 .navItem {
-  color: lightblue;
+  color: #33475B;
+  border-bottom: 1px solid transparent;
   text-decoration: none;
   font-weight: 200;
   font-size: 1.5em;
 }
 
 .navItem:hover {
-  color: #fff;
+  border-bottom: 1px solid #33475B;
   transition: 250ms;
 }
 
@@ -45,7 +46,7 @@
   .line {
     width: 30px;
     height: 3px;
-    background: lightblue;
+    background: #33475B;
     margin: 5px;
   }
 
