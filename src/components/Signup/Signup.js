@@ -18,8 +18,6 @@ export default function Signup() {
   }
 
   function renderSignUp() {
-    console.log('isFocused: ', isFocused)
-    console.log('isValid: ', isValid)
     if (!close) {
       return (
         <div className={styles.container}>
