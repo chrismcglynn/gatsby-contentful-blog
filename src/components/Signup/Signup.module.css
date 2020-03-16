@@ -17,24 +17,17 @@ span {
   display: none;
 }
 
-.mdiv {
-  height: .7em;
-  width: 1px;
-  margin-right: 6px;
-  background-color: white;
-  transform: rotate(45deg);
-  Z-index: 1;
+.closeButton {
+  height: 1em;
+  width: 1em;
+  color: white;
 }
 
-.md {
-  height: .7em;
-  width: 1px;
-  background-color: white;
-  transform: rotate(90deg);
-  Z-index: 2;
+.sendIcon {
+  color: lightgreen;
 }
 
-input {
+.emailInput {
 	color: white;
   background: transparent;
   border: none;
@@ -49,27 +42,39 @@ input {
 	margin-right: 10px;
 }
 
-input:focus {
+.emailInput:focus {
 	border: none;
 	border-radius: 0;
 	border-bottom: 1px solid white;
-
 	transition: all .3s ease-out;
 }
 
-input::placeholder {
+.emailInput::placeholder {
 	color: white;
 	font-size: 1.3em;
 	font-weight: 300;
 }
 
-input:hover::placeholder {
+.emailInput:hover::placeholder {
 	color: white;
 }
 
-input:focus::placeholder {
+.emailInput:focus::placeholder {
 	color: white;
 	transition: all .3s ease-out;
+}
+
+.validEmailInput {
+	color: white;
+  background: transparent;
+  border: none;
+	border-bottom: 1px solid lightgreen;
+	width: 100%;
+	height: 2.5em;
+	outline: none;
+	font-weight: 500;
+	letter-spacing: 2px;
+	margin-right: 10px;
 }
 
 button {
@@ -129,7 +134,7 @@ button:hover {
     justify-content: center;
     position: sticky;
     bottom: 0;
-    padding: .5em;
+    padding: 1em;
   }
   
   .input-wrapper {
@@ -147,21 +152,6 @@ button:hover {
     color: white;
     width: 100%;
     letter-spacing: 1px;
-  }
-  
-  input {
-    color: white;
-    background: transparent;
-    border-bottom: 1px solid transparent;
-    border-radius: 8px;
-    width: 100%;
-    height: 2.5em;
-    outline: none;
-    font-size: .7em;
-    font-weight: 400;
-    letter-spacing: 2px;
-    transition: all .3s ease-out;
-    margin: 6px 6px 0 0;
   }
   
   button {

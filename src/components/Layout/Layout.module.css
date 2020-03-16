@@ -8,6 +8,7 @@
 @media only screen and (min-device-width: 1200px) {
   .layout {
     max-width: 960px;
+    padding: 0 18em;
   }
 }
 
@@ -15,8 +16,7 @@
   .layout {
     margin: 0 auto;
     max-width: 100%;
-    padding: 0 2em;
-    height: 100vh;
+    min-height: 100vh;
   }
 }
 
