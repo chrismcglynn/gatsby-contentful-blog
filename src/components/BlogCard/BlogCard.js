@@ -1,17 +1,16 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styles from './BlogCard.module.css';
+import React from "react";
+import { Link } from "gatsby";
+import styles from "./BlogCard.module.css";
 
-export default function ({ title, description, date, author, slug }) {
+export default function({ title, description, date, slug, image }) {
   return (
-    <div className={styles.cardWrapper}>
-      <Link to={`/${slug}`}>
-        <div className={styles.postTitle}>
-          {title}
-        </div>
+    <Link to={`/${slug}`} className={styles.cardWrapper}>
+      <div className={styles.image}>{image}</div>
+      <div className={styles.content}>
+        <div className={styles.postTitle}>{title}</div>
         <div className={styles.postDate}>{date}</div>
         <div className={styles.postDescription}>{description}</div>
-      </Link>
-    </div>
-  )
+      </div>
+    </Link>
+  );
 }

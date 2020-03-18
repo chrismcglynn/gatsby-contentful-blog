@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import Pill from "../components/Pill/Pill";
 import styles from "./blog-post.module.css";
 
@@ -14,10 +15,8 @@ export default ({ data }) => {
       <span className={styles.postAuthor}>{post.author.name}</span>
       <Pill tags={post.tags} />
       <div className={styles.imageContainer}>
-        <img
-          className={styles.heroImage}
-          src={post.heroImage.file.url}
-          alt={post.heroImage.description}
+        <Img
+          fluid={post.heroImage.fluid}
         />
       </div>
       <div
@@ -31,25 +30,27 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      body {
-        childMarkdownRemark {
-          html
-        }
+query($slug: String!) {
+  contentfulBlogPost(slug: {eq: $slug}) {
+    body {
+      childMarkdownRemark {
+        html
       }
-      createdAt(formatString: "DD MMMM, YYYY")
-      title
-      tags
-      author {
-        name
-      }
-      heroImage {
-        file {
-          url
-        }
-        description
+    }
+    createdAt(formatString: "DD MMMM, YYYY")
+    title
+    tags
+    author {
+      name
+    }
+    heroImage {
+      description
+      fluid(maxWidth: 960) {
+        ...GatsbyContentfulFluid_withWebp
+        src
+        srcSet
       }
     }
   }
-`;
+}
+`

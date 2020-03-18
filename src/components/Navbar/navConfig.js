@@ -4,19 +4,15 @@ export const navConfig = [
     path: "/"
   },
   {
-    name: "Contact",
-    path: "/contact/"
-  },
-  {
-    name: "My Files",
-    path: "/my-files/"
-  },
-  {
     name: "About",
     path: "/about/"
   },
   {
-    name: "Maps",
-    path: "/google-maps/"
+    name: "Contact",
+    path: "/contact/"
+  },
+  {
+    name: "Blog",
+    path: "/blog/"
   }
 ]
