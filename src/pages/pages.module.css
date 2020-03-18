@@ -1,33 +1,95 @@
-.latestPosts {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .headerText {
 
-.googleMap {
-  height: 50vh;
-  width: 100%;
-}
-
-.headerText {
-  margin-bottom: 2em;
-}
-
-@media only screen and (max-width: 600px)  {
-  .latestPosts {
-    flex-direction: column;
-    width: auto;
   }
 
+  .latestPosts {
+
+  }
+  
   .googleMap {
-    height: 50vh;
+
+  }
+  
+  .contactContainer {
+
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .headerText {
+
+  }
+
+  .latestPosts {
+
+  }
+  
+  .googleMap {
+
+  }
+  
+  .contactContainer {
+
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .headerText {
+
+  }
+
+  .latestPosts {
+    display: flex;
+    align-self: center;
     width: 100%;
   }
+  
+  .googleMap {
+    height: 60vh;
+    margin:1em -100%; /* old browsers fallback */
+    margin: 0 calc(50% - 50vw);
+  }
+  
+  .contactContainer {
+    display: flex;
+    min-height: 60vh;
+    background: #4CAF50;
+    justify-content: space-between;
+    padding: 5em;
+    margin:1em -100%; /* old browsers fallback */
+    margin: 0 calc(50% - 50vw);
+  }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1200px)  {
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .headerText {
+    margin-bottom: 2em;
+  }
+
   .latestPosts {
-    flex-direction: row;
-    width: auto;
+    display: flex;
+    align-self: center;
+    width: 100%;
+  }
+  
+  .googleMap {
+    height: 60vh;
+    margin:1em -100%; /* old browsers fallback */
+    margin: 0 calc(50% - 50vw);
+  }
+  
+  .contactContainer {
+    display: flex;
+    min-height: 60vh;
+    background: #4CAF50;
+    justify-content: space-between;
+    padding: 5em;
+    margin:1em -100%; /* old browsers fallback */
+    margin: 0 calc(50% - 50vw);
   }
 }

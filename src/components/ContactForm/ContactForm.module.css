@@ -1,0 +1,52 @@
+.contactForm {
+  margin: 0 auto;
+  padding: 2em;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  width: 400px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+input {
+  outline: none;
+  border: 1px solid #ccc;
+  height: 3em;
+  padding-left: .5em;
+  letter-spacing: 1px;
+}
+
+.heading {
+  font-size: 2em;
+  color: black;
+  margin-bottom: 1em;
+}
+
+textarea {
+  outline: none;
+  border: 1px solid #ccc;
+  padding-left: .5em;
+  padding-top: .5em;
+  letter-spacing: 1px;
+}
+
+textarea:focus{
+  overflow: hidden;
+  outline:none;
+  letter-spacing: 1px;
+}
+
+.submitButton {
+  background: #4CAF50;
+  color: white;
+}
