@@ -47,7 +47,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const blogPostTemplate = path.resolve("src/templates/blog-post.js");
-  const tagTemplate = path.resolve("src/templates/tags.js");
+  const tagTemplate = path.resolve("src/templates/blog-tag.js");
 
   const result = await graphql(`
     query {
