@@ -1,14 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-// Utilities
-import kebabCase from "lodash/kebabCase"
-
-// Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
-function TagsPage({ data }) {
+export default function TagsPage({ data }) {
   return (
     <div>
       <Helmet title={data.site.siteMetadata.title} />
@@ -17,7 +12,7 @@ function TagsPage({ data }) {
         <ul>
           {data.allContentfulBlogPost.group.map(tag => (
             <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              <Link to={`/tags/${tag.fieldValue}/`}>
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
             </li>
@@ -27,26 +22,6 @@ function TagsPage({ data }) {
     </div>
   )
 }
-
-// TagsPage.propTypes = {
-//   data: PropTypes.shape({
-//     allMarkdownRemark: PropTypes.shape({
-//       group: PropTypes.arrayOf(
-//         PropTypes.shape({
-//           fieldValue: PropTypes.string.isRequired,
-//           totalCount: PropTypes.number.isRequired,
-//         }).isRequired
-//       ),
-//     }),
-//     site: PropTypes.shape({
-//       siteMetadata: PropTypes.shape({
-//         title: PropTypes.string.isRequired,
-//       }),
-//     }),
-//   }),
-// }
-
-export default TagsPage
 
 export const pageQuery = graphql`
   query {
