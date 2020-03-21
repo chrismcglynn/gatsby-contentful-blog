@@ -1,3 +1,7 @@
+/*******************************************************
+Page that displays all posts that have the selected tag
+*******************************************************/
+
 import React from "react";
 import { Link, graphql } from "gatsby";
 import TagCard from "../components/TagCard/TagCard";
