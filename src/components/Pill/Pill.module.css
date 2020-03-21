@@ -14,15 +14,11 @@
   border: 1px solid transparent;
 }
 
-.pill:hover {
+/* .pill:hover {
   cursor: pointer;
   border: 1px solid #1caf3c;
   background-color: white;
-}
-
-.pill:hover .tagLabel {
-
-}
+} */
 
 .tagLabel {
   color: #1caf3c;

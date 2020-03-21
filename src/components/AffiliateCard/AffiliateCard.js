@@ -1,39 +1,39 @@
-import React from "react";
-import { StaticQuery, graphql, Link } from "gatsby";
-import Img from "gatsby-image";
-import styles from "./AffiliateCard.module.css";
+// import React from "react";
+// import { StaticQuery, graphql, Link } from "gatsby";
+// import Img from "gatsby-image";
+// import styles from "./AffiliateCard.module.css";
 
-export default function({ affiliateLink, imgSrc }) {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          contentfulSonyCamera {
-            id
-            affiliateLink
-            cameraName
-            image {
-              fluid(maxWidth: 960) {
-                ...GatsbyContentfulFluid_withWebp
-                src
-                srcSet
-              }
-              description
-            }
-          }
-        }
-      `}
-      render={function(data) {
-        return (
-          <a
-            href={data.contentfulSonyCamera.affiliateLink}
-            target="_blank"
-            className={styles.cardWrapper}
-          >
-            <Img fluid={data.contentfulSonyCamera.image.fluid} />
-          </a>
-        );
-      }}
-    />
-  );
-}
+// export default function({ itemName }) {
+//   return (
+//     <StaticQuery
+//       query={graphql`
+//         {
+//           contentfulAmazonAffiliateItem(item: { eq: ${itemName} }) {
+//             affiliateLink
+//             item
+//             image {
+//               fluid(maxWidth: 960) {
+//                 srcWebp
+//                 srcSet
+//                 src
+//               }
+//               description
+//             }
+//           }
+//         }
+//       `}
+//       render={function(data) {
+//         return (
+//           <a
+//             href={data.contentfulAmazonAffiliateItem.affiliateLink}
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className={styles.cardWrapper}
+//           >
+//             <Img fluid={data.contentfulAmazonAffiliateItem.image.fluid} />
+//           </a>
+//         );
+//       }}
+//     />
+//   );
+// }

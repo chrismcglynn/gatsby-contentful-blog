@@ -35,7 +35,6 @@ export const pageQuery = graphql`
           slug
           tags
           heroImage {
-            description
             fluid(maxWidth: 960) {
               ...GatsbyContentfulFluid_withWebp
               src
