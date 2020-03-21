@@ -12,7 +12,7 @@ export default function ({ tags }) {
           key={`pill-${tag}-${idx}`}
           className={styles.pill}
         >
-          #{tag}
+          <span className={styles.tagLabel}>#{tag}</span>
         </Link>
       );
     })

@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Pill from "../components/Pill/Pill";
-import styles from "./blog-post.module.css";
+import styles from "./templateStyles.module.css";
 
 export default ({ data }) => {
   const post = data.contentfulBlogPost;

@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import PostLink from "../components/PostLink/PostLink"
+
 const IndexPage = ({
   data: {
     allContentfulBlogPost: { edges },
