@@ -18,6 +18,7 @@ export function wrapPageElement({ element, props }) {
         <title>Chris McGlynn</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
         <link rel="canonical" href="http://mysite.com/example" />
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
       </Helmet>
       <Layout {...props}>{element}</Layout>
     </>
