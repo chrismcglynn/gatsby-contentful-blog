@@ -46,3 +46,46 @@ img {
 a {
   text-decoration: none;
 }
+
+/**************************************
+* STYLES FOR ADDED HTML IN BLOG POSTS
+**************************************/
+.amazon-link-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3em 0;
+}
+
+.amazon-link-image {
+  align-self: center;
+}
+
+.latest-price-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 3em;
+}
+
+.latest-price {
+  text-align: center;
+  padding: .5em 2em;
+  border-radius: 8px;
+  width: 400px;
+  background-color: green;
+}
+
+.latest-price:hover {
+  background-color: #1e73be;
+  transition: 250ms;
+}
+
+.latest-price-label {
+  font-size: 1.2em;
+  color: white;
+}
+
+.fas.fa-external-link-alt {
+ margin-right: .5em;
+ color: white;
+}

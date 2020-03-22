@@ -14,5 +14,9 @@ export const navConfig = [
   {
     name: "Blog",
     path: "/blog/"
+  },  {
+    name: "Recipes",
+    path: "/recipes/"
   }
+
 ]
