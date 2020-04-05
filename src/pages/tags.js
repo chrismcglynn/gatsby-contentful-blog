@@ -1,11 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { Link, graphql } from "gatsby";
+import Layout from "../components/Layout/Layout";
 
 export default function TagsPage({ data }) {
   return (
-    <div>
+    <Layout>
       <Helmet title={data.site.siteMetadata.title} />
       <div>
         <h1>Tags</h1>
@@ -19,7 +20,7 @@ export default function TagsPage({ data }) {
           ))}
         </ul>
       </div>
-    </div>
+    </Layout>
   )
 }
 

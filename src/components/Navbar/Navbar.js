@@ -7,13 +7,13 @@ export default function Navbar() {
   const [toggle, setToggle] = useState(false);
 
   // Checks for document once SSR is done
-  if (typeof document !== 'undefined') {
-    if (!toggle) {
-      document.body.style.overflow = '';
-    } else if (toggle) {
-      document.body.style.overflow = 'hidden';
-    }
-  }
+  // if (typeof document !== 'undefined') {
+  //   if (!toggle) {
+  //     document.body.style.overflow = '';
+  //   } else if (toggle) {
+  //     document.body.style.overflow = 'hidden';
+  //   }
+  // }
 
   function renderHamburger() {
     return (

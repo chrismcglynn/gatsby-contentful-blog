@@ -1,12 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Layout from "../components/Layout/Layout";
 import RecipeCard from "../components/RecipeCard/RecipeCard";
 
 export default function Blog({ data }) {
   console.log('recipe data: ', data);
   const recipes = data.allContentfulRecipe.edges;
   return (
-    <>
+    <Layout>
       {recipes.map(recipe => (
         <RecipeCard
           title={recipe.node.title}
@@ -16,7 +17,7 @@ export default function Blog({ data }) {
           // image={recipe.node.heroImage.fluid}
         />
       ))}
-    </>
+    </Layout>
   );
 }
 
