@@ -8,7 +8,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .postTitle {
-  color: lightblue;
   font-size: 4em;
   font-weight: 200;
 }
@@ -19,11 +18,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .imageContainer {
-  height: 600px;
+  height: 500px;
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 .heroImage {
@@ -45,4 +44,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .postDescription {
   color: #33475B;
+}
+
+.iconWrapper {
+  padding-top: 160px;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+}
+
+.facebookIcon {
+  height: 1.5em !important;
+  width: 1.5em !important;
+  background-color: navy;
+  color: white;
+  padding: .5em;
+}
+
+.twitterIcon {
+  height: 1.5em !important;
+  width: 1.5em !important;
+  background-color: lightblue;
+  color: white;
+  padding: .5em;
 }
