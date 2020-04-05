@@ -1,12 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Layout from "../components/Layout/Layout";
 import TagCard from "../components/TagCard/TagCard";
 
 export default function Blog({ data }) {
   console.log(data);
   const posts = data.allContentfulBlogPost.edges;
   return (
-    <>
+    <Layout>
       {posts.map(post => (
         <TagCard
           title={post.node.title}
@@ -16,7 +17,7 @@ export default function Blog({ data }) {
           image={post.node.heroImage.fluid}
         />
       ))}
-    </>
+    </Layout>
   );
 }
 

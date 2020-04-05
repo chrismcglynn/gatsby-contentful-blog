@@ -1,12 +1,12 @@
 import React from "react";
-import ContactForm from "../components/ContactForm/ContactForm"
-import GoogleMap from "../components/GoogleMap/GoogleMap"
+import Layout from "../components/Layout/Layout";
+import ContactForm from "../components/ContactForm/ContactForm";
 import { WrappedMap } from "../components/GoogleMap/GoogleMap";
 import styles from "./pages.module.css";
 
 export default function Contact() {
   return (
-    <>
+    <Layout>
       <h1 className={styles.headerText}>Contact Page</h1>
       <div className={styles.contactContainer}>
         <ContactForm heading="Send Us A Message!" />
@@ -21,6 +21,6 @@ export default function Contact() {
             `}
         />
       </div>
-    </>
+    </Layout>
   );
 }

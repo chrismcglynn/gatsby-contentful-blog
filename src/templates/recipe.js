@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Layout from "../components/Layout/Layout";
 import Img from "gatsby-image";
 import Pill from "../components/Pill/Pill";
 import styles from "./templateStyles.module.css";
@@ -8,7 +9,7 @@ export default ({ data }) => {
   const recipe = data.contentfulRecipe;
 
   return (
-    <>
+    <Layout>
       {/* <SEO title={post.frontmatter.title} description={post.excerpt} /> */}
       <h1 className={styles.postTitle}>{recipe.title}</h1>
       <span className={styles.postDate}>{recipe.createdAt}</span>
@@ -27,7 +28,7 @@ export default ({ data }) => {
         {recipe.instructions.instructions}
       </p>
       {/* <Pill tags={recipe.tags} /> */}
-    </>
+    </Layout>
   );
 };
 

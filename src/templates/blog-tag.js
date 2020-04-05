@@ -4,6 +4,7 @@ Page that displays all posts that have the selected tag
 
 import React from "react";
 import { Link, graphql } from "gatsby";
+import Layout from "../components/Layout/Layout";
 import TagCard from "../components/TagCard/TagCard";
 import Button from "../components/Button/Button";
 
@@ -13,7 +14,7 @@ export default function Tags ({ pageContext, data }) {
   } tagged with "${pageContext.tag}"`;
 
   return (
-    <div>
+    <Layout>
       <h1>{tagHeader}</h1>
       {data.allContentfulBlogPost.edges.map(({ node }) => {
         return (
@@ -23,7 +24,7 @@ export default function Tags ({ pageContext, data }) {
       <Link to="/tags">
         <Button label="All Tags" />
       </Link>
-    </div>
+    </Layout>
   );
 };
 
