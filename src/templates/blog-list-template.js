@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Layout from "../components/Layout/Layout";
 import TagCard from "../components/TagCard/TagCard";
+import Button from "../components/Button/Button";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Blog({ data, pageContext }) {
   const posts = data.allContentfulBlogPost.edges;
@@ -35,7 +37,7 @@ export default function Blog({ data, pageContext }) {
       ))}
       {!isLast && (
         <Link to={`/blog/${nextPage}`} rel="next">
-          Next Page →
+          <Button icon="arrowRight" />
         </Link>
       )}
     </Layout>
