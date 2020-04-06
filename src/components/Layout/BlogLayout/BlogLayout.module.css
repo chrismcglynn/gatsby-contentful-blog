@@ -5,6 +5,7 @@ main {
   /* grid-template-rows: 100%; */
   justify-items: center;
   gap: 0 10px;
+  margin-bottom: 5em;
 }
 
 aside {
@@ -20,11 +21,7 @@ article {
 
 nav {
   grid-area: sidebar;
-  margin-top: 150px;
+  margin-top: 128px;
   padding: 10px;
   background: rgb(246, 246, 246);
-}
-
-.blogLayout {
-
 }

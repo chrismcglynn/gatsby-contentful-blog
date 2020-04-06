@@ -1,15 +1,10 @@
 /****************************
- BLOG POST STYLES
+  BLOG POST STYLES
 ****************************/
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  margin-bottom: .5em;
-}
-
 .postTitle {
-  font-size: 4em;
   font-weight: 200;
+  overflow: hidden;
 }
 
 .postAuthor {
@@ -17,12 +12,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
+.pillContainer {
+  margin: 5px 0;
+}
+
+.postPill {
+  margin-right: .5em;
+}
+
 .imageContainer {
   height: 500px;
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  margin-bottom: 1em;
+  margin: 2em 0;
 }
 
 .heroImage {
@@ -30,24 +33,13 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
 }
 
-.postTitle {
-  color: #33475B;
-  overflow: hidden;
-  margin: 0;
-}
-
 .postDate {
-  color: #33475B;
   font-size: .7em;
   margin-bottom: 1em;
 }
 
-.postDescription {
-  color: #33475B;
-}
-
 .iconWrapper {
-  padding-top: 160px;
+  padding-top: 132px;
   position: sticky;
   top: 0;
   cursor: pointer;
@@ -67,4 +59,19 @@ h1, h2, h3, h4, h5, h6 {
   background-color: lightblue;
   color: white;
   padding: .5em;
+}
+
+.paginationBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paginationNumber {
+  font-size: 1.5em;
+  margin: 0 1em;
+}
+
+.currentPage {
+  border-bottom: 1px solid lightsalmon;
 }

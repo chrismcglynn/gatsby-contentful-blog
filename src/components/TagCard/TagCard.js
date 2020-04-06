@@ -10,9 +10,9 @@ export default function TagCard({ title, description, date, slug, image }) {
       <Img className={styles.image} fluid={image} />
       <div className={styles.contentWrapper}>
         <div className={styles.content}>
-          <div className={styles.postTitle}>{title}</div>
-          <div className={styles.postDate}>{date}</div>
-          <div className={styles.postDescription}>{description}</div>
+          <h1 className={styles.postTitle}>{title}</h1>
+          <span className={styles.postDate}>{date}</span>
+          <p className={styles.postDescription}>{description}</p>
         </div>
         <div className={styles.buttonContainer}>
         <Link className={styles.button} to={`/${slug}`}>

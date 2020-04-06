@@ -4,7 +4,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const blogPostTemplate = path.resolve("src/templates/blog-post.js");
-  const recipeTemplate = path.resolve("src/templates/recipe.js");
   const tagTemplate = path.resolve("src/templates/blog-tag.js");
 
   const result = await graphql(`
@@ -20,16 +19,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      recipeRemark: allContentfulRecipe(
-        sort: { order: DESC, fields: [createdAt] }
-        limit: 2000
-      ) {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
       tagsGroup: allContentfulBlogPost(limit: 2000) {
         group(field: tags) {
           fieldValue
@@ -38,7 +27,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
-  // handle errors
+  // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return;
@@ -46,6 +35,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const posts = result.data.blogPageQuery.edges;
 
+  // Create pagination
   const postsPerPage = 1
   const numPages = Math.ceil(posts.length / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -61,26 +51,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  const recipes = result.data.recipeRemark.edges;
-
   // Create post detail pages
   posts.forEach(({ node }) => {
     createPage({
       path: node.slug,
       component: blogPostTemplate,
-      context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
-        slug: node.slug
-      }
-    });
-  });
-
-  // Create recipe detail pages
-  recipes.forEach(({ node }) => {
-    createPage({
-      path: node.slug,
-      component: recipeTemplate,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.

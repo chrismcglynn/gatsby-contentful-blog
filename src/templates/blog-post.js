@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SEO from "../components/SEO";
 import Layout from "../components/Layout/Layout";
 import BlogLayout from "../components/Layout/BlogLayout/BlogLayout";
 import Img from "gatsby-image";
@@ -14,22 +15,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <BlogLayout>
-        {/* <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1 className={styles.postTitle}>{post.title}</h1>
-        <span className={styles.postDate}>{post.createdAt}</span>
-        <span className={styles.postAuthor}>{post.author.name}</span>
-        <Pill tags={post.tags} />
-        <div className={styles.imageContainer}>
-          <Img
-            fluid={post.heroImage.fluid}
-          />
-        </div>
-        <div
-          className={styles.postContent}
-          dangerouslySetInnerHTML={{
-            __html: post.body.childMarkdownRemark.html
-          }}
-        /> */}
+        <SEO title={post.title} description={post.excerpt} />
         <aside>
           <div className={styles.iconWrapper}>
             <icon>
@@ -44,7 +30,11 @@ export default ({ data }) => {
           <h1 className={styles.postTitle}>{post.title}</h1>
           <span className={styles.postDate}>{post.createdAt}</span>
           <span className={styles.postAuthor}>{post.author.name}</span>
-          <Pill tags={post.tags} />
+          <div className={styles.pillContainer}>
+          {post.tags.map((tag, idx) => (
+            <Pill className={styles.postPill} tag={tag} />
+          ))}
+          </div>
           <div className={styles.imageContainer}>
             <Img fluid={post.heroImage.fluid} />
           </div>

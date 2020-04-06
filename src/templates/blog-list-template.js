@@ -4,11 +4,11 @@ import { Link } from "gatsby";
 import Layout from "../components/Layout/Layout";
 import TagCard from "../components/TagCard/TagCard";
 import Button from "../components/Button/Button";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import styles from "./templateStyles.module.css";
 
 export default function Blog({ data, pageContext }) {
   const posts = data.allContentfulBlogPost.edges;
-  const { currentPage, numPages } = pageContext
+  const { currentPage, numPages } = pageContext;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
   const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString();
@@ -25,21 +25,32 @@ export default function Blog({ data, pageContext }) {
           image={post.node.heroImage.fluid}
         />
       ))}
+      <div className={styles.paginationBar}>
       {!isFirst && (
         <Link to={`/blog/${prevPage}`} rel="prev">
-          ← Previous Page
+          <Button icon="arrowLeft" />
         </Link>
       )}
-      {Array.from({ length: numPages }, (_, i) => (
-        <Link key={`pagination-number${i + 1}`} to={`/blog/${i === 0 ? "" : i + 1}`}>
-          {i + 1}
-        </Link>
-      ))}
+        {Array.from({ length: numPages }, (_, i) => (
+          <Link
+            key={`pagination-number${i + 1}`}
+            to={`/blog/${i === 0 ? "" : i + 1}`}
+          >
+            <span
+              className={`${styles.paginationNumber} ${
+                i === currentPage - 1 ? styles.currentPage : ""
+              }`}
+            >
+              {i + 1}
+            </span>
+          </Link>
+        ))}
       {!isLast && (
         <Link to={`/blog/${nextPage}`} rel="next">
           <Button icon="arrowRight" />
         </Link>
       )}
+      </div>
     </Layout>
   );
 }
