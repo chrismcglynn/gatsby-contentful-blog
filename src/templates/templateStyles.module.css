@@ -1,29 +1,25 @@
 /****************************
- BLOG POST STYLES
+  BLOG POST STYLES
 ****************************/
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  margin-bottom: .5em;
-}
-
 .postTitle {
-  color: lightblue;
-  font-size: 4em;
-  font-weight: 200;
+  overflow: hidden;
 }
 
-.postAuthor {
-  color: #fff;
-  font-weight: 300;
+.pillContainer {
+  margin: .5em 0;
+}
+
+.postPill {
+  margin-right: .5em;
 }
 
 .imageContainer {
-  height: 600px;
+  height: 500px;
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  margin-bottom: 3em;
+  margin: .5em 0 3em 0;
 }
 
 .heroImage {
@@ -31,18 +27,40 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
 }
 
-.postTitle {
-  color: #33475B;
-  overflow: hidden;
-  margin: 0;
+.iconWrapper {
+  padding-top: 132px;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
 }
 
-.postDate {
-  color: #33475B;
-  font-size: .7em;
-  margin-bottom: 1em;
+.facebookIcon {
+  height: 1.5em !important;
+  width: 1.5em !important;
+  background-color: navy;
+  color: white;
+  padding: .5em;
 }
 
-.postDescription {
-  color: #33475B;
+.twitterIcon {
+  height: 1.5em !important;
+  width: 1.5em !important;
+  background-color: lightblue;
+  color: white;
+  padding: .5em;
+}
+
+.paginationBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paginationNumber {
+  font-size: 1.5em;
+  margin: 0 1em;
+}
+
+.currentPage {
+  border-bottom: 1px solid lightsalmon;
 }

@@ -56,7 +56,7 @@
   
   .contactContainer {
     display: flex;
-    min-height: 60vh;
+    min-height: 300px;
     background: #4CAF50;
     justify-content: space-between;
     padding: 5em;
@@ -67,6 +67,69 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  .heroNav {
+    min-height: 25em;
+    margin:1em -100%; /* old browsers fallback */
+    margin:1em calc(50% - 50vw);
+  }
+
+  .heroNavHeader {
+    font-size: 3em;
+    font-weight: 600;
+  }
+
+  .heroNavSubtitle {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .heroNavContent {
+    min-height: 455px;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4faff;
+  }
+
+  .heroNavTiles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: none;
+    padding-bottom: 50px;
+  }
+
+.tileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 110px;
+  margin-top: -235px;
+  justify-content: center;
+}
+
+.heroNavTileSubtitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+  .heroNavTile {
+    height: 160px;
+    width: 160px;
+    margin-right: 1em;
+    background-color: lightcoral;
+  }
+
   .headerText {
     margin-bottom: 2em;
   }
@@ -78,14 +141,14 @@
   }
   
   .googleMap {
-    height: 60vh;
+    height: 40vh;
     margin:1em -100%; /* old browsers fallback */
     margin: 0 calc(50% - 50vw);
   }
   
   .contactContainer {
     display: flex;
-    min-height: 60vh;
+    min-height: 300px;
     background: #4CAF50;
     justify-content: space-between;
     padding: 5em;

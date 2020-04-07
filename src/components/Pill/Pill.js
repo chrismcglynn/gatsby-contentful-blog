@@ -1,25 +1,13 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styles from './Pill.module.css';
+import React from "react";
+import { Link } from "gatsby";
+import styles from "./Pill.module.css";
 
-export default function ({ tags }) {
-
-  function renderPills() {
-    return tags.map((tag, idx) => {
-      return (
-        <Link
-          to={`/tags/${tag}`}
-          key={`pill-${tag}-${idx}`}
-          className={styles.pill}
-        >
-          <span className={styles.tagLabel}>#{tag}</span>
-        </Link>
-      );
-    })
-  }
+export default function({ tag, className }) {
   return (
-    <div className={styles.pillContainer}>
-      {renderPills(tags)}
+    <div className={`${styles.pill} ${className}`}>
+      <Link to={`/tags/${tag}`}>
+        <span className={styles.tagLabel}>#{tag}</span>
+      </Link>
     </div>
   );
 }
