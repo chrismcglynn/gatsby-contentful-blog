@@ -3,17 +3,11 @@
 ****************************/
 
 .postTitle {
-  font-weight: 200;
   overflow: hidden;
 }
 
-.postAuthor {
-  color: #fff;
-  font-weight: 300;
-}
-
 .pillContainer {
-  margin: 5px 0;
+  margin: .5em 0;
 }
 
 .postPill {
@@ -25,17 +19,12 @@
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  margin: 2em 0;
+  margin: .5em 0 3em 0;
 }
 
 .heroImage {
   width: 100%;
   height: auto;
-}
-
-.postDate {
-  font-size: .7em;
-  margin-bottom: 1em;
 }
 
 .iconWrapper {

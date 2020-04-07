@@ -16,60 +16,60 @@
   Purpose: Make table responsive
   **********************************/
 
- table {
-  width: 100%;
-}
+  table {
+    width: 100%;
+  }
 
-thead {
-  color: lightblue;
-  font-size: 1.1em;
-  text-align: left;
-}
+  thead {
+    color: lightblue;
+    font-size: 1.1em;
+    text-align: left;
+  }
 
-td {
-  word-wrap: break-word;
-  color: #fff;
-}
+  td {
+    word-wrap: break-word;
+    color: #fff;
+  }
 
-/* Force table to not be like tables anymore */
-table,
-thead,
-tbody,
-th,
-td,
-tr {
-  display: block;
-}
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
 
-/* Hide table headers (but not display: none;, for accessibility) */
-thead tr {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
 
-td {
-  /* Behave  like a "row" */
-  border: none;
-  position: relative;
-  color: lightgreen;
-}
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+    color: lightgreen;
+  }
 
-td:last-child {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 1em;
-}
+  td:last-child {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1em;
+  }
 
-td:before {
-  /* Now like a table header */
-  position: absolute;
-  /* Top/left values mimic padding */
-  top: 6px;
-  left: 6px;
-  width: 45%;
-  padding-right: 10px;
-  white-space: nowrap;
-}
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

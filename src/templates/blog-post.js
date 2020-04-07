@@ -1,7 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Disqus, CommentCount } from "gatsby-plugin-disqus";
 import SEO from "../components/SEO";
 import Layout from "../components/Layout/Layout";
 import BlogLayout from "../components/Layout/BlogLayout/BlogLayout";
@@ -9,31 +10,40 @@ import Img from "gatsby-image";
 import Pill from "../components/Pill/Pill";
 import styles from "./templateStyles.module.css";
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   const post = data.contentfulBlogPost;
-
+  let disqusConfig = {
+    url: `${location.origin+location.pathname}`,
+    identifier: post.id,
+    title: post.title,
+  }
   return (
     <Layout>
       <BlogLayout>
         <SEO title={post.title} description={post.excerpt} />
         <aside>
           <div className={styles.iconWrapper}>
-            <icon>
-              <FontAwesomeIcon icon={faFacebookF} className={styles.facebookIcon} />
-            </icon>
-            <icon>
-              <FontAwesomeIcon icon={faTwitter} className={styles.twitterIcon} />
-            </icon>
+            <div>
+              <FontAwesomeIcon
+                icon={faFacebookF}
+                className={styles.facebookIcon}
+              />
+            </div>
+            <div>
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className={styles.twitterIcon}
+              />
+            </div>
           </div>
         </aside>
         <article>
           <h1 className={styles.postTitle}>{post.title}</h1>
           <span className={styles.postDate}>{post.createdAt}</span>
-          <span className={styles.postAuthor}>{post.author.name}</span>
           <div className={styles.pillContainer}>
-          {post.tags.map((tag, idx) => (
-            <Pill className={styles.postPill} tag={tag} />
-          ))}
+            {post.tags.map((tag, idx) => (
+              <Pill key={`${tag}-${idx}`} className={styles.postPill} tag={tag} />
+            ))}
           </div>
           <div className={styles.imageContainer}>
             <Img fluid={post.heroImage.fluid} />
@@ -44,6 +54,8 @@ export default ({ data }) => {
               __html: post.body.childMarkdownRemark.html
             }}
           />
+          <CommentCount config={disqusConfig} placeholder={"..."} />
+          <Disqus config={disqusConfig} />
         </article>
         <nav>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

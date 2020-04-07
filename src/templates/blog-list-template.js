@@ -16,6 +16,7 @@ export default function Blog({ data, pageContext }) {
 
   return (
     <Layout>
+      <h1 className={styles.headerText}>Blog Posts</h1>
       {posts.map(post => (
         <TagCard
           title={post.node.title}

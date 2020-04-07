@@ -36,8 +36,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = result.data.blogPageQuery.edges;
 
   // Create pagination
-  const postsPerPage = 1
-  const numPages = Math.ceil(posts.length / postsPerPage)
+  const postsPerPage = 10;
+  const numPages = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
@@ -46,10 +46,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
-        currentPage: i + 1,
-      },
-    })
-  })
+        currentPage: i + 1
+      }
+    });
+  });
 
   // Create post detail pages
   posts.forEach(({ node }) => {
