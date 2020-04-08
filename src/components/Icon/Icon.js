@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle as farCheckCircle } from '@fortawesome/free-regular-svg-icons';
 import {
+  faImage,
+  faFire,
   faArrowRight,
   faPlus,
   faSortDown,
@@ -49,6 +51,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const IconsForIconName = {
+  image: faImage,
+  fire: faFire,
   arrowRight: faArrowRight,
   spinner: faSpinner,
   layerGroup: faLayerGroup,

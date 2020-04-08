@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { faFacebookF, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Disqus, CommentCount } from "gatsby-plugin-disqus";
+import { DiscussionEmbed } from "disqus-react"
 import SEO from "../components/SEO";
 import Layout from "../components/Layout/Layout";
 import BlogLayout from "../components/Layout/BlogLayout/BlogLayout";
@@ -12,11 +12,13 @@ import styles from "./templateStyles.module.css";
 
 export default ({ data, location }) => {
   const post = data.contentfulBlogPost;
-  let disqusConfig = {
-    url: `${location.origin+location.pathname}`,
-    identifier: post.id,
-    title: post.title,
+  const { slug, title } = post;
+
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: slug, title },
   }
+
   return (
     <Layout>
       <BlogLayout>
@@ -54,10 +56,17 @@ export default ({ data, location }) => {
               __html: post.body.childMarkdownRemark.html
             }}
           />
-          <CommentCount config={disqusConfig} placeholder={"..."} />
-          <Disqus config={disqusConfig} />
+          {/* TODO: Link to new/old posts */}
+          {/* TODO: Author Box */}
+          {/* TODO: Email Capture Form */}
+          {/* TODO: Related Read(s) */}
+          <DiscussionEmbed {...disqusConfig} />
         </article>
         <nav>
+          {/* TODO: Welcome Message */}
+          {/* TODO: Email Capture Form */}
+          {/* TODO: Resources, Popular Articles */}
+          {/* TODO: Banner or Ads */}
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus
           urna duis convallis convallis. Fringilla urna porttitor rhoncus dolor
@@ -76,6 +85,7 @@ export default ({ data, location }) => {
           porttitor leo.
         </nav>
       </BlogLayout>
+      {/* TODO: Footer with copy of menu and ways to connect */}
     </Layout>
   );
 };
@@ -83,6 +93,7 @@ export default ({ data, location }) => {
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
+      slug
       body {
         childMarkdownRemark {
           html

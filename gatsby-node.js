@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogPostTemplate = path.resolve("src/templates/blog-post.js");
   const tagTemplate = path.resolve("src/templates/blog-tag.js");
+  const categoryTemplate = path.resolve("src/templates/blog-category.js");
 
   const result = await graphql(`
     query {
@@ -21,6 +22,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
       tagsGroup: allContentfulBlogPost(limit: 2000) {
         group(field: tags) {
+          fieldValue
+        }
+      }
+      categoriesGroup: allContentfulBlogPost(limit: 2000) {
+        group(field: category) {
           fieldValue
         }
       }
@@ -77,4 +83,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     });
   });
+
+    // Extract tag data from query
+    const categories = result.data.categoriesGroup.group;
+
+    // Make tag pages
+    categories.forEach(category => {
+      createPage({
+        path: `/categories/${category.fieldValue}/`,
+        component: categoryTemplate,
+        context: {
+          category: category.fieldValue
+        }
+      });
+    });
 };

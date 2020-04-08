@@ -27,6 +27,10 @@
   height: auto;
 }
 
+.postContent {
+  margin-bottom: 5em;
+}
+
 .iconWrapper {
   padding-top: 132px;
   position: sticky;
@@ -37,7 +41,7 @@
 .facebookIcon {
   height: 1.5em !important;
   width: 1.5em !important;
-  background-color: navy;
+  background-color: #3B5998;
   color: white;
   padding: .5em;
 }
@@ -45,7 +49,7 @@
 .twitterIcon {
   height: 1.5em !important;
   width: 1.5em !important;
-  background-color: lightblue;
+  background-color: #01ACED;
   color: white;
   padding: .5em;
 }

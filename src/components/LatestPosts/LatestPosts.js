@@ -7,7 +7,7 @@ import styles from "./LatestPosts.module.css";
 export default function({ header }) {
   return (
     <section className={styles.latestPosts}>
-      <h1 className={styles.header}>{header}</h1>
+      <h1 className={styles.headerText}>{header}</h1>
       <div className={styles.postsContainer}>
         <StaticQuery
           query={graphql`
