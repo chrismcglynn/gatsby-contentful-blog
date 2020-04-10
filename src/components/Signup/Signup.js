@@ -13,7 +13,7 @@ export default function Signup() {
 
   function validateEmail(e) {
     const email = e.target.value;
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{3,}))$/;
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     setValid(re.test(String(email).toLowerCase()));
   }
 
@@ -21,43 +21,32 @@ export default function Signup() {
     if (!close) {
       return (
         <div className={styles.container}>
-          {!isFocused ? (
-            <div className={styles.header}>
-              <span>Sign Up For Our Newsletter!</span>
-              <FontAwesomeIcon
-                icon={faTimes}
-                onClick={function() {
-                  setClose(true);
-                }}
-                className={styles.closeButton}
-              />
-            </div>
-          ) : null}
-
-          <div className={styles.inputWrapper}>
-            <input
-              className={isValid ? styles.validEmailInput : styles.emailInput}
-              onKeyUp={validateEmail}
-              onClick={function () { setFocus(true); }}
-              placeholder="email:"
-              user-scalable={0}
-            />
-            {!isValid && isFocused ? (
-              <FontAwesomeIcon
-              icon={faTimes}
+          <input
+            className={isValid ? styles.validEmailInput : styles.emailInput}
+            onKeyUp={validateEmail}
+            onClick={function() {
+              setFocus(true);
+            }}
+            placeholder="Sign Up For Our Newsletter!"
+            user-scalable={0}
+          />
+          {isValid && isFocused ? (
+            <FontAwesomeIcon
+              className={styles.sendIcon}
+              icon={faArrowAltCircleRight}
               onClick={function() {
                 setClose(true);
               }}
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={faTimes}
               className={styles.closeButton}
+              onClick={function() {
+                setClose(true);
+              }}
             />
-            ) : null}
-            {isValid && isFocused && (
-              <FontAwesomeIcon
-              className={styles.sendIcon}
-              icon={faArrowAltCircleRight}
-            />
-            )}
-          </div>
+          )}
         </div>
       );
     } else {
@@ -65,5 +54,5 @@ export default function Signup() {
     }
   }
 
-  return renderSignUp();
+  return <div className={styles.signUpForm}>{renderSignUp()}</div>;
 }

@@ -21,13 +21,22 @@ h5,
 h6 {
   margin: 0;
   color: #33475B;
+  font-weight: 200;
 }
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
 
 p {
   margin: 0;
-  font-size: 16px;
-  line-height: 2em;
-  font-weight: 600;
+  line-height: 1.5em;
+  font-weight: 400;
   color: #33475B;
 }
 
@@ -40,9 +49,47 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0
 }
 
 a {
   text-decoration: none;
+}
+
+/**************************************
+* STYLES FOR ADDED HTML IN BLOG POSTS
+**************************************/
+.amazon-link-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3em 0;
+}
+
+.amazon-link-image {
+  align-self: center;
+}
+
+.latest-price-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 3em;
+}
+
+.latest-price {
+  text-align: center;
+  padding: .5em 2em;
+  border-radius: 8px;
+  width: 400px;
+  background-color: green;
+}
+
+.latest-price:hover {
+  background-color: #1e73be;
+  transition: 250ms;
+}
+
+.latest-price-label {
+  font-size: 1.2em;
+  color: white;
 }

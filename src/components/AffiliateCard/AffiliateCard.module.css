@@ -39,24 +39,4 @@
     border-top-left-radius: 4px;
     border-top-right-radius:4px;
   }
-  
-  .content {
-    padding: 1em;
-  }
-  
-  .postTitle {
-    color: #33475B;
-    overflow: hidden;
-    margin: 0;
-  }
-  
-  .postDate {
-    color: #33475B;
-    font-size: .7em;
-    margin-bottom: 1em;
-  }
-  
-  .postDescription {
-    color: #33475B;
-  }
 }

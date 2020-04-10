@@ -1,36 +1,18 @@
 import React from "react";
-import { graphql } from "gatsby";
 import LatestPosts from "../components/LatestPosts/LatestPosts";
 import SEO from "../components/SEO";
-import BlogTags from "./blog-tags"
+import Layout from "../components/Layout/Layout";
+import HeroNav from "../components/HomePageSections/HeroNav/HeroNav";
+import styles from "./pages.module.css";
 
 const IndexPage = ({ data }) => (
   <>
-    <SEO title="Home" />
-    <LatestPosts header="Latest Posts" postData={data} />
+    <Layout>
+      <SEO title="Home" />
+      <HeroNav header="Header Text" />
+      <LatestPosts header="Latest Posts" />
+    </Layout>
   </>
 );
 
 export default IndexPage;
-
-export const query = graphql`
-  query {
-    allContentfulBlogPost {
-      edges {
-        node {
-          title
-          id
-          author {
-            name
-          }
-          slug
-          tags
-          createdAt(formatString: "DD MMMM, YYYY")
-          description {
-            description
-          }
-        }
-      }
-    }
-  }
-`;

@@ -1,57 +1,15 @@
-// const path = require(`path`)
-
-// exports.onCreateWebpackConfig = ({ actions }) => {
-//   actions.setWebpackConfig({
-//     node: {
-//       fs: 'empty'
-//     }
-//   })
-// }
-
-// exports.createPages = async ({ actions, graphql, reporter }) => {
-//   const { createPage } = actions
-//   const result = await graphql(`
-//     query {
-//       allContentfulBlogPost {
-//         edges {
-//           node {
-//             slug,
-//             tags
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   if (result.errors) {
-//     reporter.panic('error loading post',JSON.stringify(result.errors))
-//   }
-
-//   result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
-//     createPage({
-//       path: node.slug,
-//       component: path.resolve(`./src/templates/blog-post.js`),
-//       context: {
-//         // Data passed to context is available
-//         // in page queries as GraphQL variables.
-//         slug: node.slug,
-//       },
-//     })
-//   })
-// }
-
 const path = require("path");
-const _ = require("lodash");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
   const blogPostTemplate = path.resolve("src/templates/blog-post.js");
-  const tagTemplate = path.resolve("src/templates/tags.js");
+  const tagTemplate = path.resolve("src/templates/blog-tag.js");
+  const categoryTemplate = path.resolve("src/templates/blog-category.js");
 
   const result = await graphql(`
     query {
-      postsRemark: allContentfulBlogPost(
+      blogPageQuery: allContentfulBlogPost(
         sort: { order: DESC, fields: [createdAt] }
         limit: 2000
       ) {
@@ -67,16 +25,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fieldValue
         }
       }
+      categoriesGroup: allContentfulBlogPost(limit: 2000) {
+        group(field: category) {
+          fieldValue
+        }
+      }
     }
   `);
 
-  // handle errors
+  // Handle errors
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return;
   }
 
-  const posts = result.data.postsRemark.edges;
+  const posts = result.data.blogPageQuery.edges;
+
+  // Create pagination
+  const postsPerPage = 10;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: path.resolve("./src/templates/blog-list-template.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1
+      }
+    });
+  });
 
   // Create post detail pages
   posts.forEach(({ node }) => {
@@ -97,11 +76,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Make tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${tag.fieldValue}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue
       }
     });
   });
+
+    // Extract tag data from query
+    const categories = result.data.categoriesGroup.group;
+
+    // Make tag pages
+    categories.forEach(category => {
+      createPage({
+        path: `/categories/${category.fieldValue}/`,
+        component: categoryTemplate,
+        context: {
+          category: category.fieldValue
+        }
+      });
+    });
 };

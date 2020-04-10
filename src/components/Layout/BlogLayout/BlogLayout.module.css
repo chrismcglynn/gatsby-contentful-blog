@@ -1,0 +1,27 @@
+main {
+  display: grid;
+  grid-template-areas: "socialButtons content sidebar";
+  grid-template-columns: .2fr 3fr 1fr;
+  /* grid-template-rows: 100%; */
+  justify-items: center;
+  gap: 0 10px;
+  margin-bottom: 5em;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: socialButtons;
+}
+
+article {
+  grid-area: content;
+}
+
+nav {
+  grid-area: sidebar;
+  margin-top: 128px;
+  padding: 10px;
+  background: rgb(246, 246, 246);
+}

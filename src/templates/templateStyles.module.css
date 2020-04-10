@@ -1,0 +1,70 @@
+/****************************
+  BLOG POST STYLES
+****************************/
+
+.postTitle {
+  overflow: hidden;
+}
+
+.pillContainer {
+  margin: .5em 0;
+}
+
+.postPill {
+  margin-right: .5em;
+}
+
+.imageContainer {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: .5em 0 3em 0;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+}
+
+.postContent {
+  margin-bottom: 5em;
+}
+
+.iconWrapper {
+  padding-top: 132px;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+}
+
+.facebookIcon {
+  height: 1.5em !important;
+  width: 1.5em !important;
+  background-color: #3B5998;
+  color: white;
+  padding: .5em;
+}
+
+.twitterIcon {
+  height: 1.5em !important;
+  width: 1.5em !important;
+  background-color: #01ACED;
+  color: white;
+  padding: .5em;
+}
+
+.paginationBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paginationNumber {
+  font-size: 1.5em;
+  margin: 0 1em;
+}
+
+.currentPage {
+  border-bottom: 1px solid lightsalmon;
+}

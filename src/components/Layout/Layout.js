@@ -12,6 +12,7 @@ import Navbar from "../Navbar/Navbar"
 import Signup from "../Signup/Signup"
 import Footer from "../Footer/Footer"
 import styles from "./Layout.module.css"
+import "../../global.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,9 +29,9 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <div className={styles.layout}>
-        <main>{children}</main>
+        <div>{children}</div>
       </div>
-      <Signup />
+      {/* <Signup /> */}
       <Footer />
     </>
   )

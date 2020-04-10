@@ -1,9 +1,10 @@
 import React from "react";
+import Layout from "../components/Layout/Layout";
 import styles from "./pages.module.css";
 
 export default function AboutCssModules() {
   return (
-    <>
+    <Layout>
       <h1 className={styles.headerText}>About Page</h1>
       <div>
         <p>
@@ -60,6 +61,6 @@ export default function AboutCssModules() {
           Inventore, eum.
         </p>
       </div>
-    </>
+    </Layout>
   );
 }
